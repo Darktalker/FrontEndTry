@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Hot Spot</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="china-map" id="app">
+        <!-- 显示区域 -->
+        <!-- 采用Vue的Methods方法 -->
+        <div v-for="(item,index) in region_info" :style="regionLoc(item)" :class="{region:item.level>=0,blue:item.level==1,orange:item.level==0}">
+            <!-- 显示热点 -->
+            <div class="dot"></div>
+            <!-- 向外扩散的圆圈 -->
+            <div v-for="n in item.places" :class="getPlace(n)"></div>
+            <!-- 地名 -->
+            <div class="txt">{{item.region_name}}</div>
+        </div>
+    </div>
+    <script>
+        const placesList = [
+            ['place01','place02'],
+            ['place01','place02','place03'],
+            ['place01','place02','place03','place04']
+        ];
+        var cities = [{
+                    region_name: '青海',
+                    region_x: 302,
+                    region_y: 308,
+                    level: 2,
+                    places: placesList[0]
+                },{
+                    region_name: '北京',
+                    region_x: 229,
+                    region_y: 559,
+                    level: 0,
+                    places: placesList[2]
+                },{
+                    region_name: '湖北',
+                    region_x: 394,
+                    region_y: 526,
+                    level: 2,
+                    places: placesList[0]
+                },{
+                    region_name: '四川',
+                    region_x: 403,
+                    region_y: 401,
+                    level: 1,
+                    places: placesList[1]
+                },{
+                    region_name: '云南',
+                    region_x: 516,
+                    region_y: 358,
+                    level: 0,
+                    places: placesList[2]
+                },{
+                    region_name: '陕西',
+                    region_x: 348,
+                    region_y: 473,
+                    level: 0,
+                    places: placesList[2]
+                },{
+                    region_name: '广东',
+                    region_x: 515,
+                    region_y: 526,
+                    level: 0,
+                    places: placesList[2]
+                },{
+                    region_name: '辽宁',
+                    region_x: 200,
+                    region_y: 652,
+                    level: 1,
+                    places: placesList[1]
+                },{
+                    region_name: '江苏',
+                    region_x: 371,
+                    region_y: 637,
+                    level: 2,
+                    places: placesList[0]
+                },{
+                    region_name: '香港',
+                    region_x: 539,
+                    region_y: 554,
+                    level: 1,
+                    places: placesList[1]
+                },{
+                    region_name: '山东',
+                    region_x: 300,
+                    region_y: 604,
+                    level: 1,
+                    places: placesList[1]
+                },{
+                    region_name: '内蒙古',
+                    region_x: 250,
+                    region_y: 470,
+                    level: 1,
+                    places: placesList[1]
+                },]
+        var app = new Vue({
+            el: "#app",
+            data: {
+                region_info: cities
+            },
+            methods: {
+                regionLoc:function(item){
+                    return {
+                        top: item.region_x+'px',
+                        left: item.region_y+'px'
+                    }
+                },
+                getPlace:function(n){
+                    return ['place', 
+                            n];
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #31363a;
+}
+
+.china-map {
+  position: relative;
+  width: 747px;
+  height: 617px;
+  background: url("./img/map_black_bg.png") no-repeat center;
+  margin: 60px auto 0;
+}
+
+.region {
+  position: absolute;
+}
+
+.region .dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -5px 0 0 -5px;
+  width: 10px;
+  height: 10px;
+  background: #a2a9b4;
+  opacity: 1;
+  filter: alpha(opacity=0);
+  border-radius: 50%;
+}
+
+.region .place {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -33px 0 0 -33px;
+  width: 66px;
+  height: 66px;
+  border: 2px solid #b7b7b7;
+  border-radius: 50%;
+  opacity: 0.12;
+  box-shadow: 0 0 4px #82878f inset;
+  animation: scale 2s ease-out infinite both;
+}
+
+.region .txt {
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 14px;
+  color: #ccc;
+  width: 50px;
+
+}
+
+.region.blue .place {
+  width: 120px;
+  height: 120px;
+  margin: -64px 0 0 -64px;
+  border: 1px solid #009fd9;
+  box-shadow: 0 0 12px #009fd9 inset;
+}
+
+.region.blue .dot {
+  background: #0080d9;
+}
+
+.region.orange .place {
+  width: 60px;
+  height: 60px;
+  margin: -32px 0 0 -32px;
+  border: 2px solid #f90;
+  box-shadow: 0 0 12px #f90 inset;
+}
+.region.orange .dot {
+  background: #f90;
+}
+/* 地区定位 */
+
+.region-bj {
+  top: 229px;
+  left: 559px;
+}
+
+.region-qh {
+  top: 302px;
+  left: 308px;
+}
+
+.region-hb {
+  top: 394px;
+  left: 526px;
+}
+
+.region-sc {
+  left: 401px;
+  top: 403px;
+}
+
+.region-yn {
+  left: 358px;
+  top: 516px;
+}
+
+.region-sx {
+  left: 473px;
+  top: 348px;
+}
+
+.region-gd {
+  left: 526px;
+  top: 515px;
+}
+
+.region-ln {
+  left: 652px;
+  top: 200px;
+}
+
+.region-js {
+  left: 637px;
+  top: 371px;
+}
+
+.region-xg {
+  left: 554px;
+  top: 539px;
+}
+
+.region-sd {
+  left: 604px;
+  top: 300px;
+}
+
+.region-nmg {
+  left: 470px;
+  top: 250px;
+}
+
+/* 动画 */
+@keyframes scale {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.region .place01 {
+  animation-delay: .5s;
+}
+
+.region .place02 {
+  animation-delay: 1s;
+}
+
+.region .place03 {
+  animation-delay: 1.5s;
+}
+
+.region .place04 {
+  animation-delay: 2s;
+}

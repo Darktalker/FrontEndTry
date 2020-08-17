@@ -1,0 +1,125 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #31363a;
+}
+
+.china-map {
+    /* 给地图加上相对定位 */
+    position: relative;
+    /* 给地图设置宽高 */
+    width: 747px;
+    height: 617px;
+    /* 设置背景图片，不重复，居中 */
+    background: url("./img/map_black_bg.png") no-repeat center;
+    /* 地图设置为距顶部60px，左右居中 */
+    margin: 60px auto 0;
+}
+
+/* 区域地点 */
+.region {
+    /* 设置绝对定位 */
+    position: absolute;
+    /* top: 302px;
+    left: 308px; */
+}
+/* 热点 */
+.region .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -5px 0 0 -5px;
+    width: 10px;
+    height: 10px;
+    background: #a2a9b4;
+    opacity: 1;
+    border-radius: 50%;
+}
+/* 扩算圆圈 */
+.region .place {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -33px 0 0 -33px;
+    width: 66px;
+    height: 66px;
+    border: 2px solid #b7b7b7;
+    opacity: 0.12;
+    border-radius: 50%;
+    box-shadow: 0 0 4px #82878f inset;
+
+    animation: scale 2s ease-out infinite both;
+}
+/* 地名 */
+.region .txt {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+    color: #ccc;
+    width: 50px;
+}
+
+.region.blue .place {
+    width: 120px;
+    height: 120px;
+    margin: -64px 0 0 -64px;
+    border: 1px solid #009fd9;
+    box-shadow: 0 0 12px #009fd9 inset;
+}
+
+.region.blue .dot {
+    background: #0080d9;
+}
+
+.region.orange .place {
+    width: 60px;
+    height: 60px;
+    margin: -32px 0 0 -32px;
+    border: 2px solid #f90;
+    box-shadow: 0 0 12px #f90 inset;
+}
+
+.region.orange .dot {
+    background: #f90;
+}
+
+.region .place01 {
+    animation-delay: 0.5s;
+}
+
+.region .place02 {
+    animation-delay: 1s;
+}
+
+.region .place03 {
+    animation-delay: 1.5s;
+}
+
+.region .place04 {
+    animation-delay: 2s;
+}
+
+/* 动画 */
+@keyframes scale {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
